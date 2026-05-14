@@ -1,0 +1,27 @@
+name: kw_dbt_demo
+version: 1.0.0
+config-version: 2
+profile: kw_dbt_demo
+model-paths:
+  - models
+analysis-paths:
+  - analyses
+test-paths:
+  - tests
+seed-paths:
+  - seeds
+macro-paths:
+  - macros
+snapshot-paths:
+  - snapshots
+models:
+  kw_dbt_demo:
+    bdp:
+      +materialized: table
+      +catalog_name: catalog_horizon
+      +database: KW_DBT_BDP_DB
+    cdp:
+      +materialized: table
+      +catalog_name: catalog_horizon
+      +database: KW_DBT_CDP_DB
+

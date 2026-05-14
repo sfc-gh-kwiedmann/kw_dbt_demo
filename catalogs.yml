@@ -1,0 +1,10 @@
+catalogs:
+  - name: catalog_horizon #arbitrary name to reference in dbt_project.yml
+    active_write_integration: snowflake_write_integration
+    write_integrations:
+      - name: snowflake_write_integration
+        external_volume: KW_ICEBERG_EXTERNAL_VOLUME #where to write iceberg metadata
+        table_format: iceberg #CREATE ICEBERG TABLE instead of CREATE TABLE 
+        catalog_type: built_in #CATALOG= 'SNOWFLAKE'
+        adapter_properties:
+          change_tracking: True #Required if want to use streams on these tables 

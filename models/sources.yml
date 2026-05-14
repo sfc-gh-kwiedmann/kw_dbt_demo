@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: iceberg_data
+    database: KW_CLD_DATABASE
+    schema: '"kw-cld-iceberg-db"'
+    tables:
+      - name: kw-cld-glue-created-table
+        identifier: '"kw-cld-glue-created-table"'

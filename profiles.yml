@@ -1,0 +1,10 @@
+kw_dbt_demo:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      role: KW_DBT_ROLE
+      warehouse: KW_DBT_WH
+      database: KW_DBT_CDP_DB
+      schema: TRANSFORMED_DATA
+      threads: 8
