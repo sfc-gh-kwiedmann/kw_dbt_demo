@@ -2,29 +2,29 @@ version: 2
 
 models:
   - name: products_summary
-    description: Aggregated product counts and average prices by price tier
+    description: One row per price tier with aggregate metrics (count and average price)
     columns:
       - name: price_tier
-        description: Price tier classification
+        description: The tier grouping key — must contain exactly 3 rows
         tests:
           - unique
           - not_null
           - accepted_values:
               values: ['premium', 'standard', 'budget']
       - name: product_count
-        description: Number of products in this tier
+        description: Total number of products in this tier, must be at least 1
         tests:
           - not_null
       - name: avg_price
-        description: Average price within this tier
+        description: Mean price within the tier, must be positive
         tests:
           - not_null
 
   - name: top_10_products_by_price
-    description: Top 10 most expensive products
+    description: The 10 highest-priced products, ordered by price descending
     columns:
       - name: id
-        description: Product identifier
+        description: Product identifier, unique within this result set
         tests:
           - unique
           - not_null
@@ -33,11 +33,11 @@ models:
         tests:
           - not_null
       - name: price
-        description: Product price
+        description: Product price — all rows should be among the most expensive
         tests:
           - not_null
       - name: price_tier
-        description: Price tier classification
+        description: Expected to be mostly premium or standard given high prices
         tests:
           - not_null
           - accepted_values:

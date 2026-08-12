@@ -4,4 +4,4 @@
 #     version: 1.0.3
 
 packages:
-  - local: local_packages/my_custom_pkg
+  - local: local_packages/custom_tests

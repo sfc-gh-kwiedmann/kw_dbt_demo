@@ -1,4 +1,4 @@
 packages:
-  - local: local_packages/my_custom_pkg
-    name: my_custom_pkg
-sha1_hash: 8bc54e64174e61ba135a1ef274277e102c75eb97
+  - local: local_packages/custom_tests
+    name: custom_tests
+sha1_hash: 80cb1b635c0c303347060d2509a436fb3a8e9a93
