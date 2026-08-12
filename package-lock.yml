@@ -1,4 +1,0 @@
-packages:
-  - local: local_packages/custom_tests
-    name: custom_tests
-sha1_hash: 80cb1b635c0c303347060d2509a436fb3a8e9a93
