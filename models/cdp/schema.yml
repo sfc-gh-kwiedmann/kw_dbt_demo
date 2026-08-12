@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: products_enriched
+    description: Products with a computed price tier classification
+    columns:
+      - name: id
+        description: Unique product identifier
+        tests:
+          - unique
+          - not_null
+      - name: product
+        description: Product name
+        tests:
+          - not_null
+      - name: price
+        description: Product price
+        tests:
+          - not_null
+      - name: price_tier
+        description: Price tier classification (premium, standard, budget)
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['premium', 'standard', 'budget']

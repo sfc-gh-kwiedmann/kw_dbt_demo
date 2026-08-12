@@ -1,0 +1,4 @@
+packages:
+  - local: local_packages/my_custom_pkg
+    name: my_custom_pkg
+sha1_hash: 8bc54e64174e61ba135a1ef274277e102c75eb97

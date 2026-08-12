@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: products_summary
+    description: Aggregated product counts and average prices by price tier
+    columns:
+      - name: price_tier
+        description: Price tier classification
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              values: ['premium', 'standard', 'budget']
+      - name: product_count
+        description: Number of products in this tier
+        tests:
+          - not_null
+      - name: avg_price
+        description: Average price within this tier
+        tests:
+          - not_null
+
+  - name: top_10_products_by_price
+    description: Top 10 most expensive products
+    columns:
+      - name: id
+        description: Product identifier
+        tests:
+          - unique
+          - not_null
+      - name: product
+        description: Product name
+        tests:
+          - not_null
+      - name: price
+        description: Product price
+        tests:
+          - not_null
+      - name: price_tier
+        description: Price tier classification
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['premium', 'standard', 'budget']
